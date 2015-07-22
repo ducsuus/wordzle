@@ -61,10 +61,12 @@ var isPlayerAllowedToPost = false;
 
 function allowPlayer(){
     isPlayerAllowedToPost = true;
+    document.getElementById("status-container").style.background = "green";
     console.log(isPlayerAllowedToPost);
 }
 
 function disallowPlayer(){
     isPlayerAllowedToPost = false;
     console.log(isPlayerAllowedToPost);
+    document.getElementById("status-container").style.background = "red";
 }
