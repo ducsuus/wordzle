@@ -9,6 +9,9 @@ var wordDiv = document.getElementById('words');
 // Create a new websocket connection
 var connection = new WebSocket(address);
 
+// Is it our turn right now?
+var isTurn = false;
+
 // When the connection is open, send some data to the server
 connection.onopen = function () {
   console.log('opened!');
@@ -23,7 +26,11 @@ connection.onerror = function (error) {
 connection.onmessage = function (e) {
   console.log('Server: ' + e.data);
 
-  wordDiv.innerHTML += e.data + '<br>';
+  if(e.data == 'switch_turn'){
+  	isTurn = true;
+  }else{
+  	wordDiv.innerHTML += e.data + ' ';
+  }
 
 };
 
@@ -32,10 +39,11 @@ function addWord(){
 
 	var word_box = document.getElementById('word-input');
 
-	if(word_box.value !== ''){
+	if(isTurn && word_box.value !== ''){
 		connection.send(word_box.value);
 
 		word_box.value = '';
+		isTurn = false;
 	}
 }
 
