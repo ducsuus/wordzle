@@ -1,0 +1,58 @@
+
+
+
+/* The input box container */
+#word-input-container{
+	position: absolute;
+
+	bottom: 10%;
+	left: 50%;
+
+	width: 470px;
+	height: 50px;
+
+	border: 5px solid #FF8E45;
+	border-radius: 10px;
+
+	background: #FFD4A9;
+
+	transform: translateX(-50%);
+
+}
+
+#status-container{
+
+	position: absolute;
+
+	margin-top: -40px;
+
+	text-align: center;
+
+	background: red;
+}
+
+/* The input box */
+#word-input {
+
+	border: none;
+	border-radius: 10px;
+
+	position: relative;
+
+	width: 470px;
+	height: 50px;
+
+	/*top: 5px;
+	left: 5px;*/
+
+	background: #FFD4A9;
+
+	font-family: 'Luckiest Guy';
+	font-size: 40px;
+	text-align: center;
+}
+
+/* Make sure that the text box doesn't get highlighted when the cursor is inside it */
+#word-input:focus{
+	outline-width: 0;
+}

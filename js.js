@@ -1,9 +1,8 @@
-// Websocket testing, let's test some websockets!
+// Wordzle JavaScript
 
-console.log("Websocket testing starting");
 
-var address = 'ws://localhost:8888/websocket';
-address = 'ws://ducsuus.com:8888/websocket';
+/* Websockets */
+var address = 'ws://ducsuus.com:8888/websocket';
 
 var wordDiv = document.getElementById('words');
 
@@ -28,6 +27,29 @@ connection.onmessage = function (e) {
 
 };
 
+/* Send a word to the server */
 function addWord(){
-	connection.send(prompt('message: '));
+
+	var word_box = document.getElementById('word-input');
+
+	if(word_box.value !== ''){
+		connection.send(word_box.value);
+
+		word_box.value = '';
+	}
+}
+
+/* General functions */
+function isNumberKey(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+    if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)){
+        return false;
+    }else{
+    	return true;
+    }
+}
+
+function isAcceptableChar(event){
+	// Allow for all upper-case letters, all lower-case letters, and the return key
+	if ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 13)){return true;}else{return false;}
 }

@@ -1,16 +1,32 @@
+<!-- Wordlze - a test by Joe Mattelaer and James Muir -->
 <html>
 
 <head>
-<title>Websocket testing</title>
+<title>Wordzle - A test by Joe Mattelaer and James Muir</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- Font CSS -->
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Luckiest+Guy">
 </head>
 
 <body>
 
 <h1>Joe and James's websocket testing</h1>
 
-<p>Stuff should be below!</p>
+<div id='word-input-container'>
 
-<button id="button" style="width: 100px; height: 100px;" onclick="addWord()">dsadas</button>
+	<div id='status-container'>
+
+		Waiting for players
+
+	</div>
+
+
+	<form onsubmit='addWord(); return false;'>
+		<input id='word-input' type='text' maxlength='20' onkeypress="return isAcceptableChar(event);" />
+		<input type="submit" value="Go" />
+	</form>
+</div>
 
 <div id='words'>
 
