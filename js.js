@@ -31,12 +31,14 @@ connection.onmessage = function (e) {
 function addWord(){
 
 	var word_box = document.getElementById('word-input');
+    
+    if(isPlayerAllowedToPost === true){
+        if(word_box.value !== ''){
+            connection.send(word_box.value);
 
-	if(word_box.value !== ''){
-		connection.send(word_box.value);
-
-		word_box.value = '';
-	}
+            word_box.value = '';
+        }
+    }
 }
 
 /* General functions */
@@ -52,4 +54,17 @@ function isNumberKey(evt) {
 function isAcceptableChar(event){
 	// Allow for all upper-case letters, all lower-case letters, and the return key
 	if ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 13)){return true;}else{return false;}
+}
+
+/* Functions and variables to allow or disallow the user */
+var isPlayerAllowedToPost = false;
+
+function allowPlayer(){
+    isPlayerAllowedToPost = true;
+    console.log(isPlayerAllowedToPost);
+}
+
+function disallowPlayer(){
+    isPlayerAllowedToPost = false;
+    console.log(isPlayerAllowedToPost);
 }
