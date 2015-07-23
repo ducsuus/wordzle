@@ -4,13 +4,13 @@ body{
 }
 
 #title{
-	font-family: 'Luckiest Guy';
+	font-family: 'Abel';
 	font-size: 70px;
 }
 
 #words{
 
-	font-family: 'Luckiest Guy';
+	font-family: 'Abel';
 	font-size: 50px;
 
 }
@@ -28,7 +28,7 @@ body{
 
 	transform: translateX(-50%);
 
-	font-family: 'Luckiest Guy';
+	font-family: 'Abel';
 	font-size: 30px;
 	text-align: center;
 
@@ -71,7 +71,7 @@ body{
 
 	background: #FFD4A9;
 
-	font-family: 'Luckiest Guy';
+	font-family: 'Abel';
 	font-size: 40px;
 	text-align: center;
 }
@@ -95,7 +95,7 @@ body{
 
 	background: #FFD4A9;
 
-	font-family: 'Luckiest Guy';
+	font-family: 'Abel';
 	font-size: 35px;
 	text-align: center;
 
