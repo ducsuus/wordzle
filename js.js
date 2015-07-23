@@ -2,9 +2,7 @@
 
 
 /* Websockets */
-var address = 'ws://ducsuus.com:8888/websocket';
-// testing with newer server
-address = 'ws://ducsuus.com:8888/wordzle/sessionidhere'
+var address = 'ws://wordzle.ducsuus.com:8888/wordzle/' + game_id;
 
 var wordDiv = document.getElementById('words');
 
