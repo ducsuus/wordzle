@@ -3,6 +3,8 @@
 
 /* Websockets */
 var address = 'ws://ducsuus.com:8888/websocket';
+// testing with newer server
+address = 'ws://ducsuus.com:8888/wordzle/sessionidhere'
 
 var wordDiv = document.getElementById('words');
 
@@ -28,6 +30,8 @@ connection.onmessage = function (e) {
 
   if(e.data == 'switch_turn'){
   	isTurn = true;
+  	document.getElementById("status-container").style.background = "#2EB82E";
+    document.getElementById("status-container").innerHTML = "Your Turn";
   }else{
   	wordDiv.innerHTML += e.data + ' ';
   }
@@ -40,11 +44,18 @@ function addWord(){
 	var word_box = document.getElementById('word-input');
 
 	if(isTurn && word_box.value !== ''){
-		connection.send(word_box.value);
 
+		connection.send(word_box.value);
 		word_box.value = '';
+		
 		isTurn = false;
 	}
+
+	document.getElementById("status-container").style.background = "#FF0000";
+    document.getElementById("status-container").innerHTML = "Waiting For Players";
+
+    word_box.select();
+
 }
 
 /* General functions */
@@ -59,5 +70,5 @@ function isNumberKey(evt) {
 
 function isAcceptableChar(event){
 	// Allow for all upper-case letters, all lower-case letters, and the return key
-	if ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 13)){return true;}else{return false;}
+	if ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 13 || event.charCode == 44 || event.charCode == 46 || event.charCode == 39){return true;}else{return false;}
 }

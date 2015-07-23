@@ -11,7 +11,9 @@
 
 <body>
 
-<h1 style='text-align: center;'>Wordzle</h1>
+<h1 id='title' style='text-align: center;'>Wordzle</h1>
+
+
 
 <div id='word-input-container'>
 
@@ -23,16 +25,15 @@
 
 
 	<form onsubmit='addWord(); return false;'>
-		<input id='word-input' type='text' maxlength='20' onkeypress="return isAcceptableChar(event);" />
-		<input type="submit" value="Go" />
+		<input id='word-input' type='text' maxlength='20' onkeypress="return isAcceptableChar(event);" placeholder='enter word here'/>
+		<input id='word-input-go' type="submit" value="Go" />
 	</form>
 </div>
 
-<div id='words'>
-
-<p>Words will come below</p>
-
 </div>
+
+<!-- This div is placed after the form so that when it is modified, the text box is not unselected -->
+<div id='words'>
 
 </body>
 
