@@ -1,8 +1,7 @@
 // Wordzle JavaScript
 
-
 /* Websockets */
-var address = 'ws://wordzle.ducsuus.com:8888/wordzle/' + game_id;
+var address = 'ws://wordzle.ducsuus.com:8888/wordzlenew/' + game_id;
 
 var wordDiv = document.getElementById('words');
 
